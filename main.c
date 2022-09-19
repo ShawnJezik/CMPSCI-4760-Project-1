@@ -24,6 +24,7 @@ while ((c = getopt (argc, argv, "ab:c:")) != -1)
 {
 switch (c)
 {
+    // adding in case scenarios for the program to execute properly
 case 'a':
 help();
 return 1;
@@ -34,6 +35,7 @@ break;
 case 'c':
 output = optarg;
 break;
+    // fail safe option if option chosen is not known
 case '?':
 printf("Unknown option");
 help();
@@ -43,6 +45,7 @@ break;
 }
 }
 
+    // Displaying to the user what the input and output
 printf("Input file %s\n",input);
 printf("Output File %s\n",output);
 
@@ -69,6 +72,7 @@ if ((pos=strchr(data, '\n')) != NULL){
 
 len = strlen(data);
 
+    //adding a for loop to count down
 for (i = len - 1; i >= 0; i--)
 {
 reverse[j++] = data[i];
